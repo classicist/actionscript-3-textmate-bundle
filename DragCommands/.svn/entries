@@ -1,0 +1,169 @@
+8
+
+dir
+10740
+http://macromates.com/svn/Bundles/trunk/Review/Bundles/ActionScript%203.tmbundle/DragCommands
+http://macromates.com/svn/Bundles
+
+
+
+2008-10-13T16:43:51.066428Z
+10711
+simon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+ClassReference.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+aa62b9976576b3bce072bc24ff2d7aa5
+2008-10-13T16:43:51.066428Z
+10711
+simon
+
+[Embed].tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+27af7d884798e8663e7aef59466078a9
+2008-09-26T15:42:02.129111Z
+10645
+simon
+has-props
+
+[Embed] 2.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+009c9e45ddcdba05ad86a79eeb5ff465
+2007-05-10T14:33:43.556490Z
+7203
+simon
+has-props
+
+[Embed] 3.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+7ff2d4ac7a2efff04be20887fe57f9f9
+2007-05-10T14:33:43.556490Z
+7203
+simon
+has-props
+
+asdoc-swf-description.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+bb65e7fda9e0a96d34638cb2860c0d8a
+2008-05-16T08:14:01.593690Z
+9584
+simon
+has-props
+
+import.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+17c74f471ba1f104cf2a4b35bece9734
+2008-07-08T22:04:18.821144Z
+10207
+simon
+has-props
+
+implement interface.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+49c08f94bf4d7b8582ce79727a65c3fc
+2008-05-06T17:15:27.401536Z
+9526
+simon
+
+@see.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+3d0ce4c0075f1fff86621066559ada18
+2008-06-20T10:13:16.966330Z
+9984
+simon
+has-props
+
+@includeExample.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+9a11065543ced377cf7ab4d7e294b643
+2007-12-20T18:06:11.534192Z
+8696
+simon
+has-props
+
+[IconFile].tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+6579d687207eab5028ef33c935aef9ec
+2007-05-10T14:33:43.556490Z
+7203
+simon
+has-props
+
+Convert sol to xml.tmDragCommand
+file
+
+
+
+
+2009-06-08T23:02:07.000000Z
+4c9a13d6cb4596873c0fc3ea12c02b2f
+2007-05-07T14:28:52.098545Z
+7160
+simon
+has-props
+

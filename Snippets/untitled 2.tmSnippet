@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>package org.ironcity.$1
+{
+	import flexunit.flexui.controls.FlexUnitLabels;
+	import flexunit.framework.TestCase;
+
+	public class $2Test extends TestCase 
+	{
+   		private var _instance:Class;
+
+		override public function setUp():void 
+		{
+         
+		}
+        
+        	override public function tearDown():void 
+         {
+        	
+		}
+
+		$3
+  	}//EOClass
+}//EOPackage</string>
+	<key>name</key>
+	<string>untitled</string>
+	<key>tabTrigger</key>
+	<string>tpack</string>
+	<key>uuid</key>
+	<string>4F62BAD8-E7F2-48D9-9E09-C342C9C2B798</string>
+</dict>
+</plist>

@@ -1,0 +1,54 @@
+8
+
+dir
+10740
+http://macromates.com/svn/Bundles/trunk/Review/Bundles/ActionScript%203.tmbundle/Templates/Ant%20Build_xml.tmTemplate
+http://macromates.com/svn/Bundles
+
+
+
+2007-04-25T22:31:20.675922Z
+7053
+simon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+info.plist
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+2d295b6da0d256ac67233c846b474c8b
+2007-04-25T22:31:20.675922Z
+7053
+simon
+has-props
+
+build.xml
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+90d7995f979db37e79932a6cd35b1539
+2007-04-25T22:31:20.675922Z
+7053
+simon
+has-props
+

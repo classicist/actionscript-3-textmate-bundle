@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>bundleUUID</key>
+	<string>B01F8CF0-F73F-4717-9C4E-0C26BBF800C7</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -KU 
+require ENV["TM_SUPPORT_PATH"] + "/lib/textmate.rb"
+require ENV["TM_SUPPORT_PATH"] + '/lib/exit_codes'
+PROJECT = ENV['TM_PROJECT_DIRECTORY']
+
+SUPPORT = "#{ENV['TM_SUPPORT_PATH']}"
+require SUPPORT + '/lib/ui'
+f_uri   = ENV["TM_FILEPATH"]
+$currentWord = ENV['TM_CURRENT_WORD']
+
+$props_list=[]
+
+$mode=0
+
+def getClassFile (search)
+
+	superClass = `grep -l -i -r "class #{search}" "#{PROJECT}" "/Users/Shared/AS3_intrinsic_classes/"`.split("\n")
+	fp=superClass[0]
+	superSuperClass = `grep -i -o  "extends.*" "#{fp}"`.split("\n")
+
+	listProps (superClass[0])
+
+	if (superSuperClass.length&gt;0)
+
+		
+	
+		getClassFile(superSuperClass[0].split(" ")[1]);
+
+	 end 
+  
+end
+
+
+
+def listProps (file)
+  	  
+
+    #suche nach properties
+
+
+  	f_open  = File.open( "#{file}", "r" )
+	words    = f_open.read
+
+  	
+  	import_list = []
+		
+	hits=0
+	
+  	words.each do |line|
+
+  		prop=line.scan(/\s*(public|private|\s*)\s*(static|\s*)\s*(function|var|const)\s(.*)(get|set|\w*)(\w*)(\W*)(=|;|\{)/)
+
+  		if prop.empty?
+      		#print "Not defined"	
+  		else
+      		#print   prop[0][3] +"\n"
+  			if  (prop[0][1]!="static" and $mode==0) or (prop[0][1]=="static" and $mode==1) 
+					
+					if (prop[0][0]=="private" and $currentWord=="this" ) or ( prop[0][0]=="public") or ( prop[0][0] =="")
+  						$props_list.push(prop[0][2]+" "+prop[0][3]);
+						hits=hits+1
+					end
+		
+  			end
+  		end
+
+  	end
+	
+	if hits&gt;0
+	$props_list.push("---")
+	end
+  
+end
+
+if $currentWord!="this"
+  
+
+    TextMate.exit_show_tool_tip "Nothing selected." if $currentWord.empty?
+
+    f_open  = File.open( f_uri, "r" )
+    txt     = f_open.read
+
+    accessor_match   = txt.scan(/#{$currentWord}(\W*=\W*new|:)\W*(\w*)/)
+
+    if accessor_match.empty?	
+        $mode=1
+	   getClassFile($currentWord)
+		
+    else
+		
+		getClassFile(accessor_match[0][1])
+    			
+    end
+  
+  
+else
+  
+  	found_classes = []
+	STDIN.read.scan(/\bclass\b.*\bextends\b\s(\w*)/).each do | path |
+	found_classes &lt;&lt; path
+	end
+
+	getClassFile (found_classes[0])
+  
+  
+end
+
+
+
+#print $props_list.join("\n")
+
+
+#######################################
+#
+# Pop-up mit gefundenen Eigenschaften
+#
+#######################################
+
+index = TextMate::UI.menu($props_list)
+
+if index == nil 
+	TextMate.exit_insert_text("")
+end
+
+
+#######################################
+#
+#  Formatierung mit TAB-Stops,
+#  Getter Setter etc.
+#
+#######################################
+
+snippet=$props_list[index]
+
+myOutput=""
+
+
+
+if (snippet.scan(/\s*function\s*/).length&gt;0)
+		
+        
+      
+		 functionName=snippet.scan(/\.*function\s(.*)\(/)		 
+		 		
+
+           arguments=snippet.scan(/\((.*)\)/);
+
+           returnType=snippet.scan(/\).*:\s*(.*)/)
+
+            myOutputArgs=[]
+
+             args=arguments[0][0].split(",")
+             num=0
+             args.each do |arg|
+            		myOutputArgs.push("${#{num}:"+arg+"}")
+				        num += 1 
+             end
+
+		   
+
+            if (snippet.scan(/\s*get\s*/).length&gt;0)
+	
+               myOutput+= functionName[0][0].gsub(/\s*get\s*/,"") +";"		
+
+            elsif (snippet.scan(/\s*set\s*/).length&gt;0)
+
+
+               myOutput+=  functionName[0][0].gsub(/\s*set\s*/,"") +"=${0:" + myOutputArgs[0] + "};$1"	
+
+            else
+			  
+                myOutput+=  functionName[0][0] 	 
+                myOutput+= "("+myOutputArgs.join(",")+");"	
+
+            end
+		   
+		
+
+else
+
+ 
+  functionName=snippet.scan(/(var|const)\s*(\w*)\s*:/)	
+  returnType=snippet.scan(/(.*):\s*(\w*)/)
+  
+  myOutput+=  functionName[0][1]	 
+  
+  myOutput+= "${1:"+ returnType[0][1] +";}"
+
+
+end
+
+#print "@returns: #{returnType}"
+
+
+
+TextMate.exit_insert_snippet( ".#{ myOutput  }" )
+
+
+
+
+
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@A</string>
+	<key>name</key>
+	<string>inherited properties</string>
+	<key>output</key>
+	<string>showAsTooltip</string>
+	<key>scope</key>
+	<string>source.actionscript.3</string>
+	<key>tabTrigger</key>
+	<string>.</string>
+	<key>uuid</key>
+	<string>B56B912A-2A7C-400D-88BE-6F9CAB0C2308</string>
+</dict>
+</plist>

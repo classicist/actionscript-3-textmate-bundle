@@ -1,0 +1,58 @@
+8
+
+dir
+10740
+http://macromates.com/svn/Bundles/trunk/Review/Bundles/ActionScript%203.tmbundle/Templates
+http://macromates.com/svn/Bundles
+
+
+
+2008-09-26T15:42:02.129111Z
+10645
+simon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+Class.tmTemplate
+dir
+
+Sprite Subclass.tmTemplate
+dir
+
+EventDispatcher Subclass.tmTemplate
+dir
+
+Error Subclass.tmTemplate
+dir
+
+Project - Actionscript 3.tmTemplate
+dir
+
+Interface.tmTemplate
+dir
+
+Crossdomain_xml.tmTemplate
+dir
+
+Event Subclass.tmTemplate
+dir
+
+Ant Build_xml.tmTemplate
+dir
+
+Singleton.tmTemplate
+dir
+

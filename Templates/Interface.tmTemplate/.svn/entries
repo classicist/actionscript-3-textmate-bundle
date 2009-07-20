@@ -1,0 +1,54 @@
+8
+
+dir
+10740
+http://macromates.com/svn/Bundles/trunk/Review/Bundles/ActionScript%203.tmbundle/Templates/Interface.tmTemplate
+http://macromates.com/svn/Bundles
+
+
+
+2008-05-18T16:11:49.054846Z
+9617
+simon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+info.plist
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+d86ce1e12ee035d7fd0d548a8ab192b6
+2008-05-18T16:11:49.054846Z
+9617
+simon
+has-props
+
+class.as
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+331af6acd76f89aaf3e566599d529ade
+2008-05-18T16:11:49.054846Z
+9617
+simon
+has-props
+

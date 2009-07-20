@@ -1,0 +1,54 @@
+8
+
+dir
+10740
+http://macromates.com/svn/Bundles/trunk/Review/Bundles/ActionScript%203.tmbundle/Templates/EventDispatcher%20Subclass.tmTemplate
+http://macromates.com/svn/Bundles
+
+
+
+2008-07-02T17:02:43.435119Z
+10115
+simon
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+dfb7d73b-c2ec-0310-8fea-fb051d288c6d
+
+info.plist
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+84d3ee6c731b4371055e1467aa39ed35
+2008-07-02T17:02:43.435119Z
+10115
+simon
+has-props
+
+class.as
+file
+
+
+
+
+2009-06-08T23:02:09.000000Z
+ab9cade1a63d9fe84f4970ed783fd685
+2008-07-02T17:02:43.435119Z
+10115
+simon
+has-props
+
