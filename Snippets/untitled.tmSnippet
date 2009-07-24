@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>public function test$1():void{
+	<string>public function test_should_$1():void{
 	var msg:String = "$2";
 
 	assert$3(msg, );
@@ -14,7 +14,7 @@
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>testf</string>
+	<string>tfunc</string>
 	<key>uuid</key>
 	<string>8AA9A78F-8CD3-48D9-A41D-703444A887BB</string>
 </dict>

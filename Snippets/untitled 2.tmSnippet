@@ -3,30 +3,31 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>package org.ironcity.$1
+	<string>package org.ironcity.unit.$1
 {
-	import flexunit.flexui.controls.FlexUnitLabels;
-	import flexunit.framework.TestCase;
+  import flexunit.flexui.controls.FlexUnitLabels;
+  import flexunit.framework.TestCase;
 
-	public class $2Test extends TestCase 
-	{
-   		private var _instance:Class;
+  public class $2Test extends TestCase 
+  {
+    private var _instance:Class;
 
-		override public function setUp():void 
-		{
+    override public function setUp():void 
+    {
          
-		}
+    }
         
-        	override public function tearDown():void 
-         {
+    override public function tearDown():void 
+    {
         	
-		}
+    }
 
-		$3
-  	}//EOClass
+		
+	tfunc$3		
+  }//EOClass
 }//EOPackage</string>
 	<key>name</key>
-	<string>untitled</string>
+	<string>Test Package</string>
 	<key>tabTrigger</key>
 	<string>tpack</string>
 	<key>uuid</key>
