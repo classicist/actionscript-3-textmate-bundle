@@ -17,7 +17,7 @@ on run argv
 		tell application "Terminal"
 			
 			set FCSHTab to do script "clear"
-		  set bounds of first window to {3200, 1200, 3845, 1520}
+		  set bounds of first window to {3200, 1200, 3845, 1519}
 			delay 1
 			do script FCSHPath in FCSHTab
 			delay 2
