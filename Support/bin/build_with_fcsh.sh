@@ -44,14 +44,17 @@ FCSH=$(echo "$TM_FLEX_PATH/bin/fcsh" | sed 's/ /\\ /g');
 
 ENV_MXMLC_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_mxmlc_args('$MXMLC_ENV', '$TM_PROJECT_DIR')" )
 
+if [[ "$ACCEPTANCE_ENV" != "" ]]; then
+  ACCEPTANCE_TEST_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_acceptance_args('$TM_PROJECT_DIR')")
+fi
+
 if [ "$ENV_MXMLC_ARGS" != "" ]; then
-	MXMLC_ARGS="mxmlc $ENV_MXMLC_ARGS"
-	echo $MXMLC_ARGS
+MXMLC_ARGS="mxmlc $ENV_MXMLC_ARGS"
 fi
 
 
 if [[ "$OS" != 10.4.* ]]; then
-  "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$MXMLC_ARGS" >/dev/null
+  "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" >/dev/null;
 else
 	osascript "$TM_BUNDLE_SUPPORT/lib/fsch_iTerm.applescript" "$FCSH" "$MXMLC_ARGS" >/dev/null;
 fi

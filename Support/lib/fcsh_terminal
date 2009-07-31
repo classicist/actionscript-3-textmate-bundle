@@ -5,7 +5,8 @@ global FCSHWindowTitle
 on run argv
 	
 	set FCSHPath to item 1 of argv --"fcsh"
-	set FCSHArgs to item 2 of argv --"help"
+	set FCSHArgs1 to item 2 of argv --"help"
+	set FCSHArgs2 to item 3 of argv --"help"
 	
 	set FCSHWindowTitle to "TextMate fcsh"
 
@@ -21,7 +22,7 @@ on run argv
 			delay 1
 			do script FCSHPath in FCSHTab
 			delay 2
-			do script FCSHArgs in FCSHTab
+			do script FCSHArgs1 & " " &FCSHArgs2 in FCSHTab
 			set custom title of FCSHTab to FCSHWindowTitle
 			
 		end tell
