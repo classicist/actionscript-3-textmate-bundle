@@ -32,7 +32,6 @@ as3_doc = ENV['TM_ASDOC_GENERATION']
  *  @playerversion Flash ${3:9.0.0}
  *
  *  @author ${4:"+ENV['TM_FULLNAME']+"}
- *  @since  ${5:"+`date +%d.%m.%Y`.chop+"}
  */"
 
 # Public Methods
@@ -86,7 +85,6 @@ def class_snip(ns)
  *  @playerversion Flash 9.0.0
  *
  *  @author "+ENV['TM_FULLNAME']+"
- *  @since  "+`date +%d.%m.%Y`.chop+"
  */
 #{ns} class ${1:#{cn}} extends ${2:Object}
 {
@@ -129,10 +127,8 @@ def interface_snip
  *  Description
  *    
  *  @langversion ActionScript 3
- *  @playerversion Flash 9.0.0
  *
  *  @author "+ENV['TM_FULLNAME']+"
- *  @since  "+`date +%d.%m.%Y`.chop+"
  */
 public interface ${1:#{cn}}
 {

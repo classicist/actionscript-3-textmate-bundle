@@ -13,7 +13,7 @@ if [[ -f "$TM_FLASH_LOG" ]]; then
 
 else
 
-	echo "flashlog.txt could not be found/opened."
+	echo "flashlog.txt could not be found/opened (looked in: $TM_FLASH_LOG)."
 	echo ""
 	echo "Make sure:"
 	echo " 	you are running the Flash Debug Player."
