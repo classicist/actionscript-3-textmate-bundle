@@ -3,10 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>public function test_should_$1():void{
+	<string>public function test_should_$1():void
+{
 	var msg:String = "$2";
 
-	assert$3(msg, );
+	assertEquals(msg, $3);
 }
 </string>
 	<key>name</key>

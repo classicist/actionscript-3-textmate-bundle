@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>public function xtest_should_poke():void
+{
+    var msg:String = "";
+    assertEquals(msg, inspectObject(_instance));
+}</string>
+	<key>name</key>
+	<string>poke</string>
+	<key>tabTrigger</key>
+	<string>poke</string>
+	<key>uuid</key>
+	<string>DF02B8E2-9460-49FB-B62E-43DF17887B3E</string>
+</dict>
+</plist>
