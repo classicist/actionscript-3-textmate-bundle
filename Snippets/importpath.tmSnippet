@@ -3,18 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>public function xtest_should_poke():void
-{
-    var msg:String = "";
-    assertEquals(msg, inspectObject(_instance));
-}</string>
+	<string>import ` echo $TM_DIRECTORY | ruby -e 'print STDIN.readlines.join.chomp.gsub(/.*?\/flex\//,"").gsub("/", ".")' `.${TM_FILENAME/\.as//};</string>
 	<key>name</key>
-	<string>poke</string>
+	<string>importpath</string>
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>poke</string>
+	<string>importpath</string>
 	<key>uuid</key>
-	<string>DF02B8E2-9460-49FB-B62E-43DF17887B3E</string>
+	<string>7EF296BF-7A23-499D-B2B4-112E56796579</string>
 </dict>
 </plist>

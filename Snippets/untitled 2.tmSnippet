@@ -7,19 +7,18 @@
 {
 	import net.digitalprimates.fluint.tests.TestCase;
 	import com.clickfox.$1
-	public class ${TM_FILENAME/Test\.as//} extends TestCase 
+	public class ${TM_FILENAME/\.as//} extends TestCase 
 	{
 	  include "../../../friends/helpers/TestHelperMixin.as";
 	  private var _instance:${TM_FILENAME/Test\.as//};
 
-		public function $TM_FILENAME():void
+		public function ${TM_FILENAME/\.as//}():void
 		{
 		  super();
 		}
 	
 		override protected function setUp():void 
 		{
-
 		  _instance = new ${TM_FILENAME/Test\.as//}();
   	}
 	
@@ -36,6 +35,8 @@
 }//EOPackage</string>
 	<key>name</key>
 	<string>Test Package</string>
+	<key>scope</key>
+	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
 	<string>tpack</string>
 	<key>uuid</key>
