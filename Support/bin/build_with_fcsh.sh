@@ -56,7 +56,10 @@ fi
 
 if [[ "$OS" != 10.4.* ]]; then
   "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "$MXMLC_ENV" >/dev/null;
-  "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$TEST_MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "test" >/dev/null;  
+  if [ "$TEST_MXMLC_ARGS" != "" ]; then
+    TEST_MXMLC_ARGS="mxmlc $TEST_MXMLC_ARGS"
+    "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$TEST_MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "test" >/dev/null;  
+  fi
 else
 	osascript "$TM_BUNDLE_SUPPORT/lib/fsch_iTerm.applescript" "$FCSH" "$MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "$MXMLC_ENV" >/dev/null;
 fi
