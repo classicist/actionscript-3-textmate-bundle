@@ -19,7 +19,7 @@ else
 	#Or you could use...
 	#open -a Safari "deploy/index.html";
 	#open -a Firefox "deploy/index.html";
-	open -a Firefox "$TM_FLEX_OUTPUT";
+	open -a /Applications/Firefox.app "$TM_FLEX_OUTPUT";
 	#open -a ~/bin/flash_debug_player "$TM_FLEX_OUTPUT";
 	#open -a SAFlashPlayer "$TM_FLEX_OUTPUT";
 fi</string>

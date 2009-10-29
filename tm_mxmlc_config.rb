@@ -1,9 +1,8 @@
-def get_mxmlc_args(env, tm_project_dir)
+ def get_mxmlc_args(env, tm_project_dir)
   @cvsbranch = cvsbranch(tm_project_dir)
   mxmlc_args = {:main => "-o=#{path_to_java_project}/com.clickfox.servlet/WebContent/cfportal.swf -file-specs=src/main/flex/cfportal.mxml  #{main_library_paths}",
-                :unit => "-o=#{path_to_java_project}/com.clickfox.servlet/WebContent/cfportal.swf -file-specs=src/test/flex/org/ironcity/VisualAllTestsRunner.mxml  #{test_library_paths} #{main_library_paths}",
-                :integration => "-o=#{path_to_java_project}/com.clickfox.servlet/WebContent/cfportal.swf -file-specs=src/test/flex/org/ironcity/integration/VisualAllIntegrationTestsRunner.mxml  #{test_library_paths} #{main_library_paths}"}
-
+                :test => "-o=#{path_to_java_project}/com.clickfox.servlet/WebContent/testrunner.swf -file-specs=src/test/flex/org/ironcity/runners/SWFTestRunner.mxml  #{test_library_paths} #{main_library_paths}",
+                :spike => "#{spike_out_path} -file-specs=src/main/flex/com/clickfox/businessPortal/spike.mxml #{main_library_paths}"}
   prepare_and_print(mxmlc_args[env.to_sym], tm_project_dir)
 end
 
@@ -43,11 +42,11 @@ def is_an_absolute_path(arg)
 end
 
 def main_library_paths
-  "-library-path+=src/main/flex/lib/ -sp+=src/main/flex/ -locale=en_US -sp+=src/main/locale/"
+  "-sp+=src/main/flex/ -sp+=src/main/themes/ -sp+=src/main/locale/ -library-path+=src/main/flex/lib/ -locale=en_US -debug=true"
 end
 
 def test_library_paths
-  "-library-path+=src/test/flex/lib/ -sp+=src/test/flex/"
+  "-sp+=src/test/flex/ -library-path+=src/test/flex/lib/"
 end
 
 def funfx_automation_paths
@@ -66,5 +65,10 @@ def cvsbranch(tm_project_dir)
   @cvsbranch = tm_project_dir.split("/").last
 end
 
-#puts get_mxmlc_args("unit", '/Users/monster/Development/elipse_workspaces/Flex/2009_C5_BPDEMO')
+def spike_out_path
+  "-o=#{path_to_java_project}/com.clickfox.servlet/WebContent/cfportal.swf "
+  #"-o=/Users/monster/Desktop/spike.swf"
+end
+
+#puts get_mxmlc_args("main", '/Users/monster/Development/elipse_workspaces/Flex/2009_C5_BPDEMO')
 #puts get_acceptance_args('MOO')

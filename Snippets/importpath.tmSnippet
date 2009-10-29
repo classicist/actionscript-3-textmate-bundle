@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>import ` echo $TM_DIRECTORY | ruby -e 'print STDIN.readlines.join.chomp.gsub(/.*?\/flex\//,"").gsub("/", ".")' `.${TM_FILENAME/\.as//};</string>
+	<string>`IMPORT_PATH=$(echo $TM_DIRECTORY | ruby -e 'print STDIN.readlines.join.chomp.gsub(/.*?\/flex\//,"").gsub("/", ".")'); FILE_NAME=$(echo $TM_FILENAME | ruby -e 'print STDIN.readlines.join.chomp.gsub(".as", "")'); echo "import $IMPORT_PATH.$FILE_NAME;" | pbcopy`  
+ </string>
 	<key>name</key>
 	<string>importpath</string>
 	<key>scope</key>

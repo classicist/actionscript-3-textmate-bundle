@@ -3,18 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>public function test_should_$1():void
-{
-	assertEquals($2);
-}
-</string>
+	<string>      try
+      {
+        fail(TestHelper.EXPECTED_ERROR_NOT_THROWN)
+      } 
+      catch (e:Error)
+      {
+        assertEquals(e.message, e)
+      }</string>
 	<key>name</key>
-	<string>Test Method</string>
+	<string>Error Test</string>
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>tfunc</string>
+	<string>terr</string>
 	<key>uuid</key>
-	<string>8AA9A78F-8CD3-48D9-A41D-703444A887BB</string>
+	<string>D9FE21B7-DABD-4DD6-905C-DB6E018CFE7F</string>
 </dict>
 </plist>
