@@ -25,6 +25,7 @@ def prepare_and_print(args, tm_project_dir)
   tm_project_dir += "/cfportal"
   args = add_dir_path(args, tm_project_dir)
   $stdout << (args || "sorry, #{env} is not a valid environment, try #{mxmlc_args.keys.to_s}")
+  ""
 end
 
 def has_element_in_need_of_path(arg)
@@ -70,5 +71,5 @@ def spike_out_path
   #"-o=/Users/monster/Desktop/spike.swf"
 end
 
-#puts get_mxmlc_args("main", '/Users/monster/Development/elipse_workspaces/Flex/2009_C5_BPDEMO')
+#*puts get_mxmlc_args("main", '/Users/monster/Development/elipse_workspaces/Flex/HEAD')
 #puts get_acceptance_args('MOO')
