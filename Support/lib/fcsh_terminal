@@ -3,41 +3,33 @@
 global FCSHWindowTitle
 
 on run argv
-	
-	set FCSHPath  to item 1 of argv --"fcsh"
-	set FCSHArgs1 to item 2 of argv --"help"
-	set FCSHArgs2 to item 3 of argv --"help"
-	set FCSHArgs3 to item 4 of argv --"help"
 
-	
-	set FCSHWindowTitle to "TextMate fcsh - " & FCSHArgs3
+set FCSHPath  		to item 1 of argv --"fcsh"
+set MxmlcCommand 	to item 2 of argv
+set tabName		 	to item 3 of argv
 
-	set FCSHTab to my find_tab_by_title(FCSHWindowTitle)
-	
-	if FCSHTab is missing value then
-		
-		--Start the compile process
-		tell application "Terminal"
-			
-			set FCSHTab to do script "clear"
-		  set bounds of first window to {3200, 1200, 3845, 1519}
-			delay 1
-			do script FCSHPath in FCSHTab
-			delay 2
-			do script FCSHArgs1 & " " &FCSHArgs2 in FCSHTab
-			set custom title of FCSHTab to FCSHWindowTitle
-			
-		end tell
-		
-	else
-		--Run the compile again
-		tell application "Terminal"
-			try
-				do script "compile 1" in FCSHTab
-			end try
-		end tell
-	end if
-	
+set FCSHWindowTitle to "TextMate fcsh - " & tabName
+set FCSHTab to my find_tab_by_title(FCSHWindowTitle)
+
+if FCSHTab is missing value then
+	tell application "Terminal"
+		set FCSHTab to do script "clear"
+		delay 1
+		set bounds of first window to {3200, 1200, 3845, 1519}
+        delay 1
+	  	do script FCSHPath in FCSHTab
+		delay 2
+		do script MxmlcCommand in FCSHTab
+		set custom title of FCSHTab to FCSHWindowTitle
+	end tell
+else
+    tell application "Terminal"
+        try
+            do script "compile 1" in FCSHTab
+        end try
+    end tell	
+end if
+
 end run
 
 on find_tab_by_title(TheTabTitle)

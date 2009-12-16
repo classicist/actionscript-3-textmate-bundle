@@ -3,19 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>[Test]
-public function should_$1():void
-{
-	assertEquals($2);
-}
-</string>
+	<string>//EOPackage</string>
 	<key>name</key>
-	<string>Test Method</string>
+	<string>End of Package</string>
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>tfunc</string>
+	<string>eop</string>
 	<key>uuid</key>
-	<string>8AA9A78F-8CD3-48D9-A41D-703444A887BB</string>
+	<string>870974CA-D30F-426A-8DA5-7832D75BBB5B</string>
 </dict>
 </plist>

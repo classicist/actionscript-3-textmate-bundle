@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>ruby -e " STDOUT &lt;&lt; ENV['TM_SELECTED_TEXT'].gsub(/^.*?var (.*?):.*?([\s*?;])(.*)$/,'\1\2\3')"</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@V</string>
+	<key>name</key>
+	<string>remove var delcarations</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.actionscript.3</string>
+	<key>uuid</key>
+	<string>19F673CB-0329-4E28-8920-CF6CF772907F</string>
+</dict>
+</plist>

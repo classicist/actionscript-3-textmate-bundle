@@ -45,26 +45,11 @@ FCSH=$(echo "$TM_FLEX_PATH/bin/fcsh" | sed 's/ /\\ /g');
 ENV_MXMLC_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_mxmlc_args('$MXMLC_ENV', '$TM_PROJECT_DIR')" )
 TEST_MXMLC_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_mxmlc_args('test', '$TM_PROJECT_DIR')" )
 
-if [[ "$ACCEPTANCE_ENV" != "" ]]; then
+if [[ "$ENV_ACCEPTANCE" != "" ]]; then
   ACCEPTANCE_TEST_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_acceptance_args('$TM_PROJECT_DIR')")
 fi
 
-if [ "$ENV_MXMLC_ARGS" != "" ]; then
-MXMLC_ARGS="mxmlc $ENV_MXMLC_ARGS"
-fi
-
-
-if [[ "$OS" != 10.4.* ]]; then
-  "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "$MXMLC_ENV" >/dev/null;
-  if [ "$TEST_MXMLC_ARGS" != "" ]; then
-    TEST_MXMLC_ARGS="mxmlc $TEST_MXMLC_ARGS"
-    "$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$TEST_MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "test" >/dev/null;  
-  fi
-else
-	osascript "$TM_BUNDLE_SUPPORT/lib/fsch_iTerm.applescript" "$FCSH" "$MXMLC_ARGS" "$ACCEPTANCE_TEST_ARGS" "$MXMLC_ENV" >/dev/null;
-fi
-
-
-
+"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "mxmlc $ENV_MXMLC_ARGS" "$MXMLC_ENV" > /dev/null;
+"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "mxmlc $TEST_MXMLC_ARGS" "test" > /dev/null;  
 
 exit 200;

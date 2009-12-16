@@ -29,7 +29,8 @@
 		  _instance = null;
     }
     
-    public function test_should_exist():void
+    [Test]
+    public function should_exist():void
     {
       assertTrue(_instance is ${TM_FILENAME/Test\.as//});
     }
