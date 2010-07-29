@@ -3,19 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>[Test(expects="Error")]
-public function should_throw_a_$1_error_when_$():void
-{
-	$3;
-}
-</string>
+	<string>public static const $1:String = $2;</string>
 	<key>name</key>
-	<string>Error Test</string>
+	<string>public static const</string>
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>terr</string>
+	<string>psc</string>
 	<key>uuid</key>
-	<string>D9FE21B7-DABD-4DD6-905C-DB6E018CFE7F</string>
+	<string>467C6C0E-1DAC-4220-B474-58BBBE7BD2C7</string>
 </dict>
 </plist>

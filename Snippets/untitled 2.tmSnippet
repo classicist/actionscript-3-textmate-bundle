@@ -5,36 +5,49 @@
 	<key>content</key>
 	<string>package ` echo $TM_DIRECTORY | ruby -e 'print STDIN.readlines.join.chomp.gsub(/.*?\/flex\//,"").gsub("/", ".")' `
 {
-	import net.digitalprimates.fluint.tests.TestCase;
+	import flexunit.framework.*;
+	import org.flexunit.async.*;
+	import org.hamcrest.*;
+	import org.hamcrest.collection.*;
+	import org.hamcrest.core.*;
+	import org.hamcrest.date.*;
+	import org.hamcrest.number.*;
+	import org.hamcrest.object.*;
+	import org.hamcrest.text.*;
+	import org.fluint.uiImpersonation.UIImpersonator;
 	import org.ironcity.friends.helpers.*;
-	import com.clickfox.$1
+	import org.ironcity.friends.helpers.async.*;
+	import com.clickfox.common.util.*;
+	
+	import ` echo $TM_DIRECTORY | ruby -e 'print STDIN.readlines.join.chomp.gsub(/.*?\/flex\//,"com.clickfox").gsub("org/ironcity/unit", "").gsub("/", ".")' `.*;
 
-	public class ${TM_FILENAME/\.as//} extends TestCase 
+	public class ${TM_FILENAME/\.as//} 
 	{
-	  include "../../../friends/helpers/TestHelperMixin.as";
-	  private var _instance:${TM_FILENAME/Test\.as//};
+		private var _instance:${TM_FILENAME/Test\.as//};
 
 		public function ${TM_FILENAME/\.as//}()
 		{
-		  super();
+			super();
 		}
-	
-		override protected function setUp():void 
+		
+		[Before]	
+		public function setUp():void 
 		{
-		  _instance = new ${TM_FILENAME/Test\.as//}();
-  	}
-	
-		override protected function tearDown():void 
+			_instance = new ${TM_FILENAME/Test\.as//}();
+		}
+
+		[After]
+		public function tearDown():void 
 		{
-		  _instance = null;
-    }
-    
-    [Test]
-    public function should_exist():void
-    {
-      assertTrue(_instance is ${TM_FILENAME/Test\.as//});
-    }
-  }//EOCLass
+			_instance = null;
+		}
+   
+		[Test]
+		public function should_exist():void
+		{
+			assertThat(_instance, instanceOf(${TM_FILENAME/Test\.as//}));
+		}
+	}//EOCLass
 }//EOPackage</string>
 	<key>name</key>
 	<string>Test Package</string>

@@ -3,19 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>[Test(expects="Error")]
-public function should_throw_a_$1_error_when_$():void
-{
-	$3;
-}
-</string>
+	<string>		override protected function updateDisplayList(unscaledHeight:Number, unscaledWidth:Number):void
+		{
+			super.updateDisplayList(unscaledHeight, unscaledWidth);
+			$1
+		}</string>
 	<key>name</key>
-	<string>Error Test</string>
+	<string>updateDisplayList</string>
 	<key>scope</key>
 	<string>source.actionscript.3</string>
 	<key>tabTrigger</key>
-	<string>terr</string>
+	<string>udl</string>
 	<key>uuid</key>
-	<string>D9FE21B7-DABD-4DD6-905C-DB6E018CFE7F</string>
+	<string>54ADC015-7B23-4B27-8ADA-E643EFC14ABC</string>
 </dict>
 </plist>

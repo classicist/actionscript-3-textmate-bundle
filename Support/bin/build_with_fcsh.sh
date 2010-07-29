@@ -49,7 +49,7 @@ if [[ "$ENV_ACCEPTANCE" != "" ]]; then
   ACCEPTANCE_TEST_ARGS=$(ruby -e "require '$TM_PROJECT_DIR/tm_mxmlc_config.rb'; get_acceptance_args('$TM_PROJECT_DIR')")
 fi
 
-"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "mxmlc $ENV_MXMLC_ARGS" "$MXMLC_ENV" > /dev/null;
-"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "mxmlc $TEST_MXMLC_ARGS" "test" > /dev/null;  
+"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$ENV_MXMLC_ARGS" "$MXMLC_ENV" > /dev/null;
+"$TM_BUNDLE_SUPPORT/lib/fcsh_terminal" "$FCSH" "$TEST_MXMLC_ARGS" "test" > /dev/null;  
 
 exit 200;

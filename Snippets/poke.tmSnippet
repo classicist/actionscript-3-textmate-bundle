@@ -3,7 +3,8 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>public function xtest_should_poke():void
+	<string>[Test]
+public function should_poke():void
 {
     var msg:String = "";
     assertEquals(msg, inspectObject(_instance));

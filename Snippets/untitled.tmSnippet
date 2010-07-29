@@ -6,7 +6,7 @@
 	<string>[Test]
 public function should_$1():void
 {
-	assertEquals($2);
+	assertThat($2, equalTo($3));
 }
 </string>
 	<key>name</key>
